@@ -19,7 +19,7 @@ Follow these steps to install and configure the KeyStore system:
 
 1. **Clone the Repository**:
   ```bash
-  git clone http://gitlab.buzzler.co.uk/duncan/keystore
+  git clone https://github.com/duncanabraham/keystore
   cd keystore
   ```
 
