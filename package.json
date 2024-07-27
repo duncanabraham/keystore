@@ -19,7 +19,6 @@
     "express": "^4.19.2",
     "jsonfile": "^6.1.0",
     "jsonwebtoken": "^9.0.2",
-    "standardjs": "^1.0.0-alpha",
     "swagger-jsdoc": "^6.2.8",
     "swagger-ui-express": "^5.0.1",
     "uuid": "^10.0.0"
