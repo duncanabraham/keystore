@@ -16,4 +16,3 @@ console.log(`SECRET_KEY=${secretKey.toString('hex')}`)
 
 const iv = crypto.randomBytes(16)
 console.log(`IV_KEY=${iv.toString('hex')}`)
-

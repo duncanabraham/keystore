@@ -35,6 +35,7 @@ Copy the `.env-template` file to a new file named `.env` and fill it with necess
 - `PORT`: The port number on which the server will run, e.g., 3000.
 - `PEMPATH`: Path to your SSL certificate `.pem` file for HTTPS.
 - `DATA_STORE`: Filename for the JSON database that stores application secrets and user data.
+- `NODE_ENV`: The environment, either development or production
 - `AUTH_KEY`: A secret key used internally for additional security layers.
 - `JWT_SECRET`: Used to sign and verify JWTs, generate using `./keygen`.
 - `REFRESH_TOKEN_SECRET`: Used to sign and verify Refresh Tokens, generate using `./keygen`.
@@ -93,6 +94,10 @@ This command will launch the HTTPS server and listen for requests.
 
 ## Using the Command-Line Utility
 
+The `./keystore` utility provides comprehensive management of users, applications, and keys. Below are detailed commands for its operation:
+
+### User Management
+
 1. **Adding a New User**
    ```bash
    ./keystore adduser <username> <password> <app_ids...>
@@ -100,7 +105,6 @@ This command will launch the HTTPS server and listen for requests.
    - `username`: Username of the new user.
    - `password`: Password for the new user.
    - `app_ids`: Space-separated list of application IDs the user should have access to.
-
    Example:
    ```bash
    ./keystore adduser alice strongpassword123 app123 app456
@@ -111,7 +115,6 @@ This command will launch the HTTPS server and listen for requests.
    ./keystore deluser <username>
    ```
    - `username`: Username of the user to delete.
-
    Example:
    ```bash
    ./keystore deluser alice
@@ -123,18 +126,18 @@ This command will launch the HTTPS server and listen for requests.
    ```
    - `username`: Username for whom the password should be updated.
    - `newPassword`: The new password for the user.
-
    Example:
    ```bash
    ./keystore userpwd alice newpassword321
    ```
+
+### Application and Key Management
 
 4. **Adding a New Application**
    ```bash
    ./keystore addapp <app_name>
    ```
    - `app_name`: Name of the new application.
-
    Example:
    ```bash
    ./keystore addapp "My New App"
@@ -145,7 +148,6 @@ This command will launch the HTTPS server and listen for requests.
    ./keystore delapp <app_name>
    ```
    - `app_name`: Name of the application to delete.
-
    Example:
    ```bash
    ./keystore delapp "My New App"
@@ -158,7 +160,6 @@ This command will launch the HTTPS server and listen for requests.
    - `app_name`: Name of the application.
    - `key_name`: The key to add or update.
    - `value`: The value of the key.
-
    Example:
    ```bash
    ./keystore addkey "My New App" "API Key" "abc123"
@@ -170,17 +171,44 @@ This command will launch the HTTPS server and listen for requests.
    ```
    - `app_name`: Name of the application.
    - `key_name`: The key to delete.
-
    Example:
    ```bash
    ./keystore delkey "My New App" "API Key"
    ```
 
-#### Best Practices
+### Access Management
 
-- Ensure that all interactions with the `./keystore` utility are conducted in a secure environment.
-- Regularly review user access and application permissions to ensure that they remain aligned with current security policies.
-- Log all changes made using the `./keystore` utility to maintain an audit trail for security reviews and troubleshooting.
+8. **Listing User Access**
+   ```bash
+   ./keystore listaccess <username>
+   ```
+   - `username`: Username to list access details for.
+   Example:
+   ```bash
+   ./keystore listaccess alice
+   ```
+
+9. **Adding User Access to an Application**
+   ```bash
+   ./keystore addaccess <username> <app_id>
+   ```
+   - `username`: Username of the user.
+   - `app_id`: ID of the application to grant access to.
+   Example:
+   ```bash
+   ./keystore addaccess alice app789
+   ```
+
+10. **Deleting User Access from an Application**
+   ```bash
+   ./keystore delaccess <username> <app_id>
+   ```
+   - `username`: Username of the user.
+   - `app_id`: ID of the application to revoke access from.
+   Example:
+   ```bash
+   ./keystore delaccess alice app789
+   ```
 
 ## Security Considerations
 
