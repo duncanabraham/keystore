@@ -1,0 +1,19 @@
+#!/usr/bin/env node
+const crypto = require('crypto')
+const { v4: uuidv4 } = require('uuid')
+
+const authKey = uuidv4()
+console.log(`AUTH_KEY=${authKey}`)
+
+const jwtSecretKey = crypto.randomBytes(32).toString('hex')
+console.log(`JWT_SECRET=${jwtSecretKey}`)
+
+const jwtRefreshKey = crypto.randomBytes(32).toString('hex')
+console.log(`REFRESH_TOKEN_SECRET=${jwtRefreshKey}`)
+
+const secretKey = crypto.randomBytes(32)
+console.log(`SECRET_KEY=${secretKey.toString('hex')}`)
+
+const iv = crypto.randomBytes(16)
+console.log(`IV_KEY=${iv.toString('hex')}`)
+

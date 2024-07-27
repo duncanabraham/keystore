@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node app.js",
+    "keygen": "./keygen"
   },
   "keywords": [],
   "author": "",
@@ -18,7 +19,8 @@
     "express": "^4.19.2",
     "jsonfile": "^6.1.0",
     "jsonwebtoken": "^9.0.2",
-    "standardjs": "^1.0.0-alpha"
+    "standardjs": "^1.0.0-alpha",
+    "uuid": "^10.0.0"
   },
   "bin": "keystore.js",
   "pkg": {
