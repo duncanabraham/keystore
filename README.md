@@ -62,7 +62,7 @@ Copy and paste the output values into your `.env` file.
 To start the application, run the following command in the root directory of the project:
 
 ```bash
-npm start
+./keystoreServer
 ```
 
 This command will launch the HTTPS server and listen for requests.
