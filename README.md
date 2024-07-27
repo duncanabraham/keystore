@@ -83,14 +83,14 @@ This command will launch the HTTPS server and listen for requests.
 
 - **Login**:
   ```bash
-  curl -X POST -H "Content-Type: application/json" -d '{"username": "user", "password": "password"}' https://<hostname>:3000/login
+  curl -X POST -H "Content-Type: application/json" -d '{"username": "user", "password": "password"}' https://<hostname>:<port>/login
   ```
 
 - **Get All Keys**:
   ```bash
-  curl -H "Authorization: Bearer your_access_token_here" https://<hostname>:3000/getallkeys?appKey=app_id
+  curl -H "Authorization: Bearer your_access_token_here" https://<hostname>:<port>/getallkeys?appKey=app_id
   ```
-  
+
 ## Using the Command-Line Utility
 
 1. **Adding a New User**
