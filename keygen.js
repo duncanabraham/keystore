@@ -7,3 +7,6 @@ console.log('Secret Key:', secretKey.toString('hex'));
 // Generate a 128-bit (16-byte) random IV
 const iv = crypto.randomBytes(16);
 console.log('IV:', iv.toString('hex'));
+
+const jwtsecretKey = crypto.randomBytes(32).toString('hex');
+console.log('JWT_SECRET', jwtsecretKey);
