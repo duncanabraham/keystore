@@ -2,13 +2,13 @@
   "name": "keystore",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
+  "main": "keystore",
   "scripts": {
-    "start": "node app.js",
+    "start": "./keystore",
     "keygen": "./keygen"
   },
   "keywords": [],
-  "author": "",
+  "author": "Duncan Abraham<duncan@tydusolutions.co.uk>",
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",
