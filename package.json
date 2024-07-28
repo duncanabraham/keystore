@@ -23,17 +23,7 @@
     "swagger-ui-express": "^5.0.1",
     "uuid": "^10.0.0"
   },
-  "bin": "keystore.js",
-  "pkg": {
-    "targets": [
-      "node12-linux-x64",
-      "node12-win-x64",
-      "node12-macos-x64"
-    ],
-    "assets": [
-      "secrets.json"
-    ]
-  },
+  "bin": "keystore",
   "devDependencies": {
     "standard": "^17.1.0"
   }
