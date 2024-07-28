@@ -36,6 +36,7 @@ Copy the `.env-template` file to a new file named `.env` and fill it with necess
 - `PEMPATH`: Path to your SSL certificate `.pem` file for HTTPS.
 - `DATA_STORE`: Filename for the JSON database that stores application secrets and user data.
 - `NODE_ENV`: The environment, either development or production
+- `MODE`: set this to secure to use HTTPS, leave it blank to run in HTTP mode
 - `AUTH_KEY`: A secret key used internally for additional security layers.
 - `JWT_SECRET`: Used to sign and verify JWTs, generate using `./keygen`.
 - `REFRESH_TOKEN_SECRET`: Used to sign and verify Refresh Tokens, generate using `./keygen`.
