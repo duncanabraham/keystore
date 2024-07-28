@@ -12,7 +12,7 @@ Follow these steps to install and configure the KeyStore system:
 
 ### Prerequisites
 
-- Node.js installed on your machine (v12.x or higher recommended).
+- Node.js installed on your machine (v18.x or higher recommended).
 - Access to a terminal or command line interface.
 
 ### Setup
