@@ -5,7 +5,8 @@
   "main": "keystore",
   "scripts": {
     "start": "./keystore",
-    "keygen": "./keygen"
+    "keygen": "./keygen",
+    "test": "mocha"
   },
   "keywords": [],
   "author": "Duncan Abraham<duncan@tydusolutions.co.uk>",
@@ -25,6 +26,9 @@
   },
   "bin": "keystore",
   "devDependencies": {
+    "chai": "^4.3.4",
+    "mocha": "^10.7.0",
+    "sinon": "^18.0.0",
     "standard": "^17.1.0"
   }
 }
