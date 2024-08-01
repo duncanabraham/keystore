@@ -9,6 +9,10 @@ class KeyStore {
     this.db = jsonfile.readFileSync(this.secretsFilePath)
   }
 
+  logout () {
+    delete this.currentUser
+  }
+
   authenticate (username, password) {
     if (this.db._users && this.db._users[username]) {
       const user = this.db._users[username]
@@ -22,13 +26,12 @@ class KeyStore {
 
   getAllKeys () {
     if (!this.currentUser) {
-      throw new Error('User not authenticated')
+      return new Error('User not authenticated')
     }
 
     const userApps = this.db._users[this.currentUser].apps
     const keys = {}
 
-    console.log('userApps: ', userApps)
     userApps.forEach(appGuid => {
       if (this.db[appGuid]) {
         keys[appGuid] = {
@@ -37,7 +40,6 @@ class KeyStore {
         }
         Object.keys(this.db[appGuid].keys).forEach(keyName => {
           const encryptedValue = this.db[appGuid].keys[keyName]
-          console.log(`Decrypting key: ${keyName}, value: ${encryptedValue}`)
           keys[appGuid].keys[keyName] = decrypt(encryptedValue)
         })
       }

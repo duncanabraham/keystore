@@ -20,9 +20,16 @@ describe('KeyStore Class', () => {
   it('should retrieve all keys for authenticated user', () => {
     keyStore.authenticate('john', 'password123')
     const keys = keyStore.getAllKeys()
-    console.log('Retrieved keys:', keys)
     expect(keys).to.have.property('3e1b7ce5-90af-4fb0-bc11-f2b7f4b547c0')
     expect(keys['3e1b7ce5-90af-4fb0-bc11-f2b7f4b547c0']).to.have.property('keys')
     expect(keys['3e1b7ce5-90af-4fb0-bc11-f2b7f4b547c0'].keys).to.have.property('key1')
+  })
+
+  it('should NOT retrieve all keys if NOT authenticated', () => {
+    keyStore.logout()
+    keyStore.authenticate('john', 'wrongpassword')
+    const keys = keyStore.getAllKeys()
+
+    expect(keys).to.be.instanceof(Error)
   })
 })
