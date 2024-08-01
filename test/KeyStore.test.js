@@ -1,4 +1,13 @@
 /* global describe, it */
+
+/**
+To make this work you need to:
+1) create a user "john" with a password of "password123"
+2) create an app called "App One"
+3) add a key called key1 with a value of your choice
+4) update the GUIDs in this test to match your secrets.json file
+*/
+
 const chai = require('chai')
 
 const expect = chai.expect
